@@ -1,16 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "jsx": "react-jsx"
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ]
+  "files": [],
+"references": [
+  { "path": "./tsconfig.app.json" },
+  { "path": "./tsconfig.node.json" }
+]
 }

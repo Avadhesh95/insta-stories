@@ -16,8 +16,6 @@ const StoryViewer: React.FC<StoryViewerProps> = ({
     const [currentIndex, setCurrentIndex] = useState(
         stories.findIndex((story) => story.id === currentStory.id)
     );
-    const [prevIndex, setPrevIndex] = useState<number | null>(null);
-    const [slideDirection, setSlideDirection] = useState<'next' | 'prev'>('next');
     const [isLoading, setIsLoading] = useState(true);
 
 
@@ -27,15 +25,11 @@ const StoryViewer: React.FC<StoryViewerProps> = ({
     }, [currentStory, stories]);
 
     const handleNext = useCallback(() => {
-        setSlideDirection('next');
-        setPrevIndex(currentIndex);
         setCurrentIndex((prev) => (prev + 1) % stories.length);
         setIsLoading(true);
     }, [currentIndex, stories.length]);
 
     const handlePrevious = useCallback(() => {
-        setSlideDirection('prev');
-        setPrevIndex(currentIndex);
         setCurrentIndex((prev) => (prev - 1 + stories.length) % stories.length);
         setIsLoading(true);
     }, [currentIndex, stories.length]);
