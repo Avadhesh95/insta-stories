@@ -49,6 +49,15 @@ Ensure you have the following installed:
 
 5. Open the application in your browser.
 
+### Running Tests
+
+To run the tests for the project, use the following command:
+
+```bash
+npm run test
+
+
+
 ## Design Choices and Optimization
 
 ### 1. **Mobile-First Design**
@@ -66,29 +75,40 @@ The application is built to be mobile-first, ensuring that it provides a good us
 - **Component Modularity**: Each feature, such as the story list and story viewer, is contained within individual components. This makes the codebase easy to scale if additional features, like story comments or likes, are added.
 - **Responsive Design**: CSS is written in a way that ensures responsiveness, allowing the app to scale from mobile to tablet screens effectively.
 
-### 4. **No External Libraries for Core Functionality**
+### 4. **Test Coverage**
+
+Unit and Integration Tests: Basic Jest tests ensure that the app behaves as expected, such as ensuring the story transitions correctly and user interactions (e.g., next/prev) work as expected.
+E2E Testing: The app is also tested through end-to-end tests to verify real-user interactions.
+
+### 5. **No External Libraries for Core Functionality**
 
 The core functionality of the story transitions, navigation, and lazy loading is implemented without the use of external libraries like `react-router` or `redux`, making it lightweight and more manageable.
+
+
 
 ## Folder Structure
 
 ```
+
 ├── index.html
 ├── src/
-│   ├── components/
-│   │   ├── StoryList.tsx
-│   │   └── StoryViewer.tsx
-│   ├── data/
-│   │   └── stories.json
-│   ├── tests/
-│   │   ├── App.test.tsx
-│   │   ├── StoryList.test.tsx
-│   │   └── StoryViewer.test.tsx
-│   ├── App.tsx
-│   ├── main.tsx
+│ ├── components/
+│ │ ├── StoryList.tsx
+│ │ └── StoryViewer.tsx
+│ ├── data/
+│ │ └── stories.json
+│ ├── tests/
+│ │ ├── App.test.tsx
+│ │ ├── StoryList.test.tsx
+│ │ └── StoryViewer.test.tsx
+│ ├── App.tsx
+│ ├── main.tsx
 ├── jest.config.js
 ├── package.json
 └── README.md
+
+```
+
 ```
 
 ```
