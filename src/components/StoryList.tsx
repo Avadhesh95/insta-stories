@@ -8,9 +8,9 @@ interface StoryListProps {
 }
 
 const StoryList: React.FC<StoryListProps> = ({ stories, onStorySelect }) => (
-    <div className="story-list">
+    <div data-testid="story-list" className="story-list">
         {stories.map((story) => (
-            <div>
+            <div key={story.id}>
                 <img
                     key={story.id}
                     src={story.imageUrl}
