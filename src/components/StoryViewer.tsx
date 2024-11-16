@@ -27,12 +27,12 @@ const StoryViewer: React.FC<StoryViewerProps> = ({
     const handleNext = useCallback(() => {
         setCurrentIndex((prev) => (prev + 1) % stories.length);
         setIsLoading(true);
-    }, [currentIndex, stories.length]);
+    }, [stories.length]);
 
     const handlePrevious = useCallback(() => {
         setCurrentIndex((prev) => (prev - 1 + stories.length) % stories.length);
         setIsLoading(true);
-    }, [currentIndex, stories.length]);
+    }, [stories.length]);
 
     useEffect(() => {
         const timer = setTimeout(handleNext, 5000);
@@ -40,7 +40,7 @@ const StoryViewer: React.FC<StoryViewerProps> = ({
     }, [handleNext, currentIndex]);
 
     return (
-        <div className="story-viewer">
+        <div data-testid="story-viewer" className="story-viewer">
             <div className="story-content" onClick={(e) => e.stopPropagation()}>
                 {isLoading && <div className="loading-spinner">Loading...</div>}
                 <img src={stories[currentIndex].imageUrl} alt="story"
